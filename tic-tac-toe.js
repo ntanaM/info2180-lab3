@@ -13,7 +13,6 @@ document.addEventListener(`DOMContentLoaded`, function(){
     // Add squares to the board
     boardSquares.forEach(square => square.classList.add(`square`));
 
-
     // Exercise 2: Add an X or O square to the board
 
     // Initialize variables
@@ -31,6 +30,20 @@ document.addEventListener(`DOMContentLoaded`, function(){
 
     // Set functionality for squares on click
     boardSquares.forEach((square, index) => {  // square: for each div in class square. i: the index number of the current square in the array
+
+        // Exercise 3: Change the style when you move your mouse over a square
+
+        square.addEventListener(`mouseover`, function(e){
+            e.target.classList.add(`hover`); 
+        });
+
+
+        square.addEventListener(`mouseout`, function(e){
+            e.target.classList.remove(`hover`);
+        
+        });
+        
+        
         square.addEventListener(`click`, function(e){
             let currentSquare = e.target // Saves the current square being manipulated in a variable
 
