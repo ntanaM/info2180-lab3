@@ -60,6 +60,16 @@ document.addEventListener(`DOMContentLoaded`, function(){
         return false;
     }
 
+    function reset(){ // Resets the game board
+        board = Array(9).fill(null);
+        boardSquares.forEach(square => square.textContent = "");
+        boardSquares.forEach(square => square.classList.add(`square`));
+
+        current_player = player_X;
+        gameStatus.textContent = "Move your mouse over a square and click to play an X or an O.";
+        gameStatus.classList.remove(`you-won`);
+    }
+
 
     // Set functionality for squares on click
     boardSquares.forEach((square, index) => {  // square: for each div in class square. i: the index number of the current square in the array
@@ -106,6 +116,10 @@ document.addEventListener(`DOMContentLoaded`, function(){
 
         });
     }); 
+
+    // Exercise 5: Restart the game
+
+    newGame.addEventListener('click', reset);
 
 
 
