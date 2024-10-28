@@ -63,6 +63,7 @@ document.addEventListener(`DOMContentLoaded`, function(){
     function reset(){ // Resets the game board
         board = Array(9).fill(null);
         boardSquares.forEach(square => square.textContent = "");
+        boardSquares.forEach(square => square.className = 'square');
         boardSquares.forEach(square => square.classList.add(`square`));
 
         current_player = player_X;
